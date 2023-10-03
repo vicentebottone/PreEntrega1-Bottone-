@@ -1,7 +1,116 @@
-.escudo{
-    height: 300px;
-    width: 250px;
+.cardItem {
+    height: 800px;
+    width: 550px;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: left;
-    margin: 100px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cardItem .cardImg{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .containerButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    align-items: center;
+  }
+  .containerButtons #detalles{
+    height: 80%;
+    width: 70%;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+  }
+  .containerButtons #detalles :hover{
+    background-color: black;
+  }
+.containerButtons #AddCart{
+    background-color: rgb(216, 32, 32);
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+   border: none;
+
+  }
+  .containerButtons #AddCart img{
+    width: 100%;
+    transform: scale(0.7);
+  }
+
+  .containerButtons #detalleshover, .containerButtons #AddCart:hover{
+    background-color: rgb(216, 32, 32);
+  }
+
+
+
+
+ .cardDescription{
+    display: flex;
+    flex-direction: column;
+    
+ }
+ .cardDescription .description{
+    display: none;
+ }
+ .cardDescription .title{
+    font-size: 21px;
+    margin: 10px;
+ }
+ .cardDescription .cantidad{
+    color: black;
+    font-size: 13px;
+    margin: 10px;
+ }
+ .cardDescription .precio{
+    color: rgb(8, 8, 8);
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px;
+ }
+
+ .containerCardItems{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 10px;
+ }
+
+
+ .navbar{
+  display: flex;
+  background-color: rgb(155, 124, 124);
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px 20px;
+ }
+ .navbar-brand{
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  font-size: 24px;
+  color: solid black;
+ }
+ .navbar-sections{
+  display: flex;
+  gap: 90px;
+ }
+.imgLogo{
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
 }
+.brand-title{
+  margin: 0;
+  font-size: 24px;
+}
+
