@@ -4,25 +4,22 @@ import ButtonDetalles from "./ButtonDetalles";
 import ButtonAddCart from "./ButtonAddCart";
 import "../App.css";
 
-
-const CardItem = (productos) => {
-    return (
-        <div className="cardItem" >
-            <Image imagen={productos.imagen} />
-            <Description 
-            titulo= {productos.titulo} 
-            Description= {productos.Description}
-            cantidad={productos.cantidad} 
-            precio={productos.precio}
-            />
-            <div className="containerButtons">
-                <ButtonDetalles/>
-                <ButtonAddCart/>
-            </div>
-           
-
-        </div>
-    )
+const CardItem = ({ producto }) => { // Cambia "producto" aquí
+  return (
+    <div className="cardItem" >
+      <Image imagen={producto.imageProduct} />
+      <Description 
+        titulo={producto.titulo} 
+        Description={producto.description}
+        cantidad={producto.cantidad} 
+        precio={producto.precio}
+      />
+      <div className="containerButtons">
+        <ButtonDetalles/>
+        <ButtonAddCart id={producto.id}/>
+      </div>
+    </div>
+  )
 }
 
 export default CardItem;

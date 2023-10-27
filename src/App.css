@@ -86,31 +86,383 @@
  }
 
 
- .navbar{
-  display: flex;
-  background-color: rgb(155, 124, 124);
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px 20px;
- }
- .navbar-brand{
-  display: flex;
-  align-items: center;
-  margin-right: auto;
-  font-size: 24px;
-  color: solid black;
- }
- .navbar-sections{
-  display: flex;
-  gap: 90px;
- }
-.imgLogo{
-  width: 200px;
-  height: 200px;
-  margin-right: 20px;
-}
-.brand-title{
-  margin: 0;
-  font-size: 24px;
+
+/* Estilos para Navbar */
+.navbar {
+  background-color: #000; /* Fondo negro */
+  padding: 10px 0; /* Espaciado interior superior e inferior */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera */
 }
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #fff; /* Color de texto de la marca */
+  text-decoration: none;
+  font-size: 1.5rem; /* Tamaño de fuente de la marca */
+}
+
+.navbar-brand img {
+  max-width: 100px; /* Tamaño máximo del logo (ajustar según sea necesario) */
+  margin-right: 10px; /* Espacio entre el logo y el texto */
+}
+
+.navbar-brand a {
+  text-decoration: none; /* Eliminar subrayado de la marca */
+}
+
+.navbar-toggler {
+  border: none; /* Sin borde en el botón del menú */
+  background-color: transparent; /* Fondo transparente del botón */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* Color del icono del botón del menú */
+}
+
+/* Estilos para los elementos del menú */
+.navbar-nav {
+  align-items: center; /* Centrar verticalmente los elementos del menú */
+}
+
+.nav-item {
+  margin: 0 10px; /* Espacio entre elementos del menú */
+}
+
+.nav-link {
+  color: #fff; /* Color del texto del enlace del menú */
+  text-decoration: none;
+  font-weight: bold; /* Fuente en negrita */
+}
+
+.nav-link:hover {
+  text-decoration: none; /* Eliminar subrayado al pasar el mouse */
+}
+
+/* Estilos para el carrito de compras */
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  font-size: 24px; /* Tamaño del icono de carrito */
+  color: #fff; /* Color del icono de carrito */
+}
+
+.cart-items {
+  position: absolute;
+  top: -10px; /* Posición vertical para los elementos del carrito */
+  right: -10px; /* Posición horizontal para los elementos del carrito */
+  background-color: #dc3545; /* Color de fondo del contador de elementos */
+  color: #fff; /* Color del texto del contador de elementos */
+  border-radius: 50%; /* Forma redondeada para el contador */
+  padding: 5px 10px; /* Espaciado interior del contador */
+  font-size: 14px; /* Tamaño de fuente del contador */
+}
+
+
+/* Estilos para la sección de Productos y Conocenos */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Mover elementos a la derecha */
+}
+
+.nav-item {
+  margin: 0 10px; /* Espacio entre elementos del menú */
+}
+
+.nav-link {
+  color: #fff; /* Color del texto del enlace del menú */
+  text-decoration: none;
+  font-weight: bold; /* Fuente en negrita */
+}
+
+.nav-link:hover {
+  text-decoration: none; /* Eliminar subrayado al pasar el mouse */
+}
+/* Estilos para los enlaces visitados en la barra de navegación */
+.nav-link:visited {
+  text-decoration: none;
+  color: #fff; /* Color de texto para enlaces visitados */
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.nav-link {
+  color: #fff; /* Color del texto del enlace del menú */
+  font-weight: bold; /* Fuente en negrita */
+}
+
+/* Estilos para los enlaces de la barra de navegación visitados */
+.nav-link:visited {
+  text-decoration: none;
+  color: #fff; /* Color de texto para enlaces visitados */
+}
+
+/* Estilos para los enlaces de la barra de navegación de la página actual */
+.nav-link:not(.nav-item.active):hover {
+  text-decoration: none; /* Eliminar subrayado al pasar el mouse */
+}
+
+
+/* Estilos para el título en la barra de navegación */
+.brand-text {
+  text-align: center; /* Centrar el texto horizontalmente */
+}
+
+/* Evitar que cambie de color al pasar el mouse */
+.brand-text a:hover {
+  text-decoration: none; /* Eliminar el subrayado al pasar el mouse */
+  color: #fff; /* Color de texto al pasar el mouse */
+}
+/* Estilos para el título en la barra de navegación */
+.brand-text {
+  text-align: center; /* Centrar el texto horizontalmente */
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Evitar que cambie de color al pasar el mouse */
+.brand-text a:hover {
+  text-decoration: none; /* Eliminar el subrayado al pasar el mouse */
+  color: #fff; /* Color de texto al pasar el mouse */
+}
+
+/* Estilos para el título en la barra de navegación (para todas las pantallas) */
+.brand-text {
+  text-align: center; /* Centrar el texto horizontalmente */
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estilos para el menú hamburguesa en la barra de navegación (para pantallas más pequeñas) */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    position: absolute;
+    right: 10px; /* Ajusta la posición a la derecha */
+    top: 10px; /* Ajusta la posición hacia abajo */
+  }
+}
+.cart{
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 800px;
+  background-color: white;
+  right: 30px;
+  top: 80px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ************************** */
+.cart .cerrar{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 5%;
+  width: 100%;
+}
+
+.cart .cerrar .close{
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+/* ************************** */
+
+.cart .containerItemsCart{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  height: 84%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.cart .containerItemsCart .emptyCart{
+  color: #5b00fb;
+  font-size: 25px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart .TerminarCompra{
+  display: flex;
+  justify-content: space-between;
+  height: 8%;
+  width: 100%;
+}
+
+.cart .TerminarCompra #detalles{   
+  height: 55px;
+  width: 85%;
+  border-radius: 50px;
+  background-color: #5b00fb;
+  color: white;
+  font-size: 20px;
+  border: none;
+}
+
+.cart .TerminarCompra .terminar{
+  background-color: #2f2f30;
+  height: 55px;
+  width: 88%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  color: white;
+  font-size: 20px;
+}
+
+.cart .TerminarCompra .clear{
+  background-color: #61616e;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemCart{
+  display: flex;
+  border: 1px solid #d2b8ff;
+  width: 100%;
+  height: 130px;
+  align-items: center;
+  border-radius: 5px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.itemCart .delete{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5b00fb;
+  border: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.itemCart .delete img{
+  transform: scale(0.6);
+}
+
+
+
+/* imagen */
+
+.itemCart .img{
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+}
+
+.itemCart .img img{
+  transform: scale(0.4);
+}
+
+
+/* description */
+
+.itemCart .description-cantidad{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 33.33%;
+  height: 50%;
+}
+
+.itemCart .description-cantidad .title {
+  font-weight: bold;
+}
+
+
+/* price */
+.itemCart .price{
+  display: flex;
+  flex-direction: column;
+  width: 33.33%;
+  height: 50%;
+  justify-content: center;
+}
+
+.itemCart .price .subtotal{
+  font-weight: bold;
+  width: 100%;
+}
+
+.itemCart .price .price{
+  font-weight: bold;
+  color: #5b00fb;
+  font-size: 31px;
+  width: 100%;
+}
+
+/* Estilos para el ícono del carrito en la barra de navegación */
+.cart-icon {
+  font-size: 24px; /* Tamaño del icono de carrito */
+  color: #fff; /* Color del icono de carrito */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse para indicar que es clickeable */
+}
+
+/* Estilos para el contenedor del carrito emergente */
+.cart-popup {
+  position: fixed; /* Fija el carrito emergente en la pantalla */
+  top: 0; /* Coloca el carrito en la parte superior de la pantalla */
+  right: -400px; /* Inicialmente, oculta el carrito emergente fuera de la pantalla */
+  width: 400px; /* Ancho del carrito emergente */
+  height: 100%; /* Altura del carrito emergente (ajustar según sea necesario) */
+  background-color: #fff; /* Color de fondo del carrito emergente */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra en el borde izquierdo del carrito */
+  z-index: 999; /* Asegura que el carrito emergente esté en la parte superior */
+  transition: right 0.3s; /* Agrega una transición suave para mostrar/ocultar el carrito */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Agrega una barra de desplazamiento si el contenido del carrito es largo */
+}
+
+/* Estilos para el contenido del carrito */
+.cart-content {
+  padding: 20px; /* Espaciado interior del contenido del carrito (ajustar según sea necesario) */
+}
+
+/* Estilos para el botón de cerrar el carrito */
+.close-cart {
+  background-color: #fff; /* Color de fondo del botón de cierre */
+  color: #000; /* Color del texto del botón de cierre */
+  border: none; /* Sin borde en el botón de cierre */
+  font-size: 24px; /* Tamaño de fuente del botón de cierre (ajustar según sea necesario) */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse para indicar que es clickeable */
+}
+
+/* Estilos para el carrito de compras */
+.cart-items {
+  /* Agrega estilos para los elementos del carrito dentro del contenedor */
+}
